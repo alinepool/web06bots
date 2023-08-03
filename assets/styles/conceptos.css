@@ -2,5 +2,9 @@
     border: 2px solid red;
 }
 .box-col{
-    border: 2px solid blue;
+    border: 2px solid green;
+}
+.box-section{
+    border: 2px solid purple;
+    min-height: 300px;
 }
