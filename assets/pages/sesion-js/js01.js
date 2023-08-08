@@ -1,8 +1,13 @@
-console.log("Bienvenido a la sesion JS01")
+console.log("Bienvenido a la sesion JS01");
 
-//Tipos de datos en Js
-//No primitivos:
-//Object
+// 7 Datos primitivos:
+// numbers, string, boolean, null, undefined, bigint, symbol
+
+// Tipos de datos en Js:
+// primitivos y no primitivos
+
+// No primitivos: 
+// Object
 
 //tipo de dato strign
 const stringData = "Holi crayoli";
@@ -11,8 +16,9 @@ console.log( stringData );
 //tipos de dato Number:
 //numeros positivos, negativos, decimales, NaN, +Infinity, -Infinity
 //para un salto de linea se puede utilizar \n, en template string no es necesario
-console.log( `Tipos de datos number: ${12}, ${-6}, ${0.456}, ${5*"hola"}, ${45/0}, ${-45/0}`);
-console.log( " --\"texto entre comillas dobles\"--");
+console.log( `Tipos de datos number: 
+${12}, ${-6}, ${0.456}, ${5*"hola"}, ${45/0}, ${-45/0}`);
+console.log( " --\n \"texto entre comillas dobles\"--");
 console.log( ' -- \n "texto entre comillas dobles"--');
 
 console.log(`Valor maximo representable en JavaScript : ${Number.MAX_VALUE}`)//1.7976931348623157e+308
@@ -42,7 +48,7 @@ console.log(` MAX_SAFE_INTEGER + 4: ${ myBigInt + 4n } ` )//9007199254740995
 console.log(`Tipo de dato verdadero: ${true}`);
 console.log(`Tipo de dato falso: ${false}`);
 
-//tipo de datp undefined
+//tipo de dato undefined
 //una variable que es declarada pero el tipo de dato no es definido
 let myVar;
 console.log(`Tipo de dato undefined: ${myVar}`);
@@ -59,7 +65,7 @@ console.log(`Tipo de dato myVarNull: ${typeof myVarNull }`);//object
 console.log(`myVarNull es null: ${ myVarNull === null }`)//true
 
 //tipo de dato symbol
-//Representa un valor unico que se puede utilizar como clave en un objetos o identificador
+//Representa un valor unico que se puede utilizar como clave en un objetos o identificador unico
 const mySymbol = Symbol();
 const mySymbol2 = Symbol();
 const myKey = "codigo";
@@ -67,34 +73,38 @@ console.log(`mySymbol === mySymbol2 ${mySymbol === mySymbol2}`)
 
 const myObj = {
     clave : "valor",
-    [mySymbol] : 16,
+    [mySymbol] : 16,//se creará una clave privada, esta no se itera con un ciclo, no se almacena LocalStorage
     myKey : 123,
     [myKey] : 567,
 }
-console.log(myObj)
+console.log(myObj);
 
+//-------------------------Objetos en JavaSCcript
+// tipo de dato Array
 const cancionesCh30 = ["Trouble", "Saoko", "Rock Dj"];
+
 //tipos de datos Object
 const misDatosDePerfil = {
-    name: "Sergio",
-    lastname: "Torres",
-    age: 39,
+    name: "Aline",
+    lastname: "Pool",
+    age: 24,
     isBelicosos: false,
     fullName : function(){
-        return `Nombre completo de Sergh: ${this.name} ${this.lastname}`;
+        return `Nombre completo de Aline: ${this.name} ${this.lastname}`;
 /*         return "Nombre completo de Sergh: "  + this.name +" " + this.lastname; */
 
     },
     //Agregar una funcion que muestre el nombre completo en mayusculas
     fullNameToUpperCase : function(){
         return `Nombre completo de Sergh: ${this.name.toUpperCase()} ${this.lastname.toUpperCase()}`;
+        return this.fullName().toUpperCase();
     }
     
 }
 
 console.log( misDatosDePerfil);
 console.table(misDatosDePerfil);
-console.log(misDatosDePerfil.fullName );// no es correcto
+console.log(misDatosDePerfil.fullName );// f() return `Nombre completo de Sergh: ${this.name} ${this.lastname}`;
 console.log(misDatosDePerfil.fullName ());// se llama a la funcion con ()
 console.log( misDatosDePerfil.fullNameToUpperCase());
 
@@ -138,10 +148,19 @@ console.log( "parseInt( '$123 - 456'.slice(1) ) :" +  parseInt( "$123 - 456".sli
 console.log( Number( true ) ); // 1
 console.log( parseInt( true ) ); // NaN
 
-//Conversión a booleano
-//En la conversion de bopolean los siguientes valores son false:
-//"", 0, null, undefiend
-console.log("Boolean(1): " + Boolean(1) );//true
-console.log("Boolean('d'): "+ Boolean(" " ));//true
+// Conversión a booleano
+// En la conversión de boolean los siguientes valores son false:
+// "", 0, null, undefined
+console.log( "Boolean(1): " + Boolean(1)  ); // true 
+console.log( "Boolean(1000): " + Boolean(1000)  ); // true
+console.log( "Boolean('hola'): " + Boolean("hola")  ); // true
+console.log( "Boolean('false'): " + Boolean("false")  ); // true
+console.log( "Boolean(' '): " + Boolean(" ")  ); // true
 
-//
+// Number
+// [] -> 0 , [30] -> 30, [30,33] -> NaN, false -> 0, true -> 1
+// String
+// [] -> "" , [12,2] -> "12,2", function(){} -> "funtion(){}", {} -> [object, object]
+
+console.log ( String( JSON.stringify( {name:"sergio"}) ));
+
