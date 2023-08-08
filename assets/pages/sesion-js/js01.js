@@ -139,4 +139,9 @@ console.log( Number( true ) ); // 1
 console.log( parseInt( true ) ); // NaN
 
 //Conversión a booleano
-console.log("Boolean('d'): "+ Boolean(" " ));//
+//En la conversion de bopolean los siguientes valores son false:
+//"", 0, null, undefiend
+console.log("Boolean(1): " + Boolean(1) );//true
+console.log("Boolean('d'): "+ Boolean(" " ));//true
+
+//
