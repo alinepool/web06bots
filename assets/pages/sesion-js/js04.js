@@ -153,3 +153,4 @@ while (valor < 5) {
     console.log(`Valor en While ${valor}`);
     valor ++;
 }
+
